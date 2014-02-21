@@ -1,0 +1,14 @@
+<launch>
+  <!-- start models -->
+  <include file="$(find manipulation_worlds)/launch/pr2_table_object.launch"/>
+
+  <!-- start manipulation stack -->
+  <include file="$(find pr2_tabletop_manipulation_launch)/launch/pr2_tabletop_manipulation.launch"/>
+
+  <!-- object manipulation -->
+  <node pkg="robot_object_manipulation" type="robot_object_manipulation" name="robot_object_manipulation" output="screen"/>
+  
+  <!-- start teleop -->
+  <include file="$(find pr2_teleop)/teleop_keyboard.launch"/>
+</launch>
+
