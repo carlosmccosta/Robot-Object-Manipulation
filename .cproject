@@ -249,17 +249,6 @@
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/arm_navigation_msgs/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/arm_navigation_msgs/msg_gen/cpp/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/arm_navigation_msgs/srv_gen/cpp/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/msg_gen/cpp" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/srv_gen/cpp" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/msg_gen/cpp/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/srv_gen/cpp/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/distance_field/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/bullet/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_collision_map_processing/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_collision_map_processing/srv_gen/cpp/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/pr2_common/pr2_msgs/msg_gen/cpp/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/groovy/stacks/pr2_common/pr2_msgs/srv_gen/cpp/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include/eigen3" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/object_manipulation/object_manipulator/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/kinematics_msgs/include" kind="inc" path="" system="true"/>
@@ -271,6 +260,7 @@
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/interpolated_ik_motion_planner/srv_gen/cpp/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/planning_environment/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/geometric_shapes/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/bullet/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/planning_models/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/collision_space/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/physics_ode/opende/opende/include" kind="inc" path="" system="true"/>
@@ -279,8 +269,89 @@
 <pathentry include="/opt/ros/groovy/stacks/filters/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/arm_kinematics_constraint_aware/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/stacks/arm_navigation/kinematics_base/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/msg_gen/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/srv_gen/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_object_detector/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/distance_field/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_collision_map_processing/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/perception/tabletop_collision_map_processing/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_common/pr2_msgs/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_common/pr2_msgs/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/pr2_gripper_action/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/pr2_mechanism_controllers/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/pr2_mechanism_controllers/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/pr2_mechanism_controllers/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_mechanism/pr2_controller_interface/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_mechanism/pr2_mechanism_model/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_mechanism/pr2_hardware_interface/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/ros_control/hardware_interface/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/ros_control/controller_interface/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/ros_control/realtime_tools/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/robot_mechanism_controllers/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/robot_mechanism_controllers/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/robot_mechanism_controllers/srv/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/robot_mechanism_controllers/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_mechanism/pr2_controller_manager/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/control_toolbox/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/control_toolbox/include/control_toolbox/eigen2" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/control_toolbox/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_manipulation_controllers/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_manipulation_controllers/srv/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_manipulation_controllers/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_manipulation_controllers/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_manipulation_controllers/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/ros_realtime/rosrt/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/ros_realtime/rosatomic/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/ros_realtime/allocators/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/ros_realtime/lockfree/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_wrappers/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/navigation/move_base_msgs/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_common_actions/pr2_common_action_msgs/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_common_actions/pr2_common_action_msgs/srv/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_common_actions/pr2_common_action_msgs/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_plugs/pr2_plugs_msgs/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_plugs/pr2_plugs_msgs/srv/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_plugs/pr2_plugs_msgs/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_plugs/pr2_plugs_msgs/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_controllers/joint_trajectory_action/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_gripper_sensor_action/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_gripper_sensor_msgs/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_gripper_sensor_msgs/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_gripper_sensor_controller/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_arm_navigation/pr2_arm_navigation_perception/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/laser_filters/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/laser_assembler/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/laser_assembler/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/collider/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/collider/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/chomp_motion_planner/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/chomp_motion_planner/srv/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/chomp_motion_planner/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/chomp_motion_planner/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/chomp_motion_planner/srv_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/spline_smoother/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/spline_smoother/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/spline_smoother/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/collision_proximity/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/constraint_aware_spline_smoother/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/ompl_ros_interface/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/ompl_ros_interface/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/ompl_ros_interface/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/trajectory_filter_server/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/move_arm/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation/move_arm/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/move_arm_warehouse/msg/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/move_arm_head_monitor/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/arm_navigation_experimental/head_monitor_msgs/msg_gen/cpp/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_kinematics/pr2_arm_kinematics_constraint_aware/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_kinematics/pr2_arm_kinematics/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_gripper_grasp_planner_cluster/srv/cpp" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/stacks/pr2_object_manipulation/manipulation/pr2_gripper_grasp_planner_cluster/srv_gen/cpp/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/groovy/include/pcl-1.6" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/groovy/include/opencv" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include/vtk-5.8" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include/qhull" kind="inc" path="" system="true"/>
 <pathentry include="/usr/src/gtest/include" kind="inc" path="" system="true"/>
@@ -338,6 +409,34 @@
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
+<target name="[exe] console_control" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>console_control</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[exe] console_control/fast" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>console_control/fast</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="Build" path="[Targets]/[exe] console_control" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-C "/home/carloscosta/Projects/robot_object_manipulation" -j8</buildArguments>
+<buildTarget>console_control</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="Clean" path="[Targets]/[exe] console_control" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/cmake</buildCommand>
+<buildArguments>-E chdir "/home/carloscosta/Projects/robot_object_manipulation" "/usr/bin/cmake" -P "CMakeFiles/console_control.dir/cmake_clean.cmake"</buildArguments>
+<buildTarget></buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
 <target name=": doxygen" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/make</buildCommand>
 <buildArguments>-j8</buildArguments>
@@ -373,38 +472,38 @@
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
+<target name="[exe] object_manipulation" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>object_manipulation</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[exe] object_manipulation/fast" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>object_manipulation/fast</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="Build" path="[Targets]/[exe] object_manipulation" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-C "/home/carloscosta/Projects/robot_object_manipulation" -j8</buildArguments>
+<buildTarget>object_manipulation</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="Clean" path="[Targets]/[exe] object_manipulation" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/cmake</buildCommand>
+<buildArguments>-E chdir "/home/carloscosta/Projects/robot_object_manipulation" "/usr/bin/cmake" -P "CMakeFiles/object_manipulation.dir/cmake_clean.cmake"</buildArguments>
+<buildTarget></buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
 <target name=": rebuild_cache" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/make</buildCommand>
 <buildArguments>-j8</buildArguments>
 <buildTarget>rebuild_cache</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name="[exe] robot_object_manipulation" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>/usr/bin/make</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>robot_object_manipulation</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name="[exe] robot_object_manipulation/fast" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>/usr/bin/make</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>robot_object_manipulation/fast</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name="Build" path="[Targets]/[exe] robot_object_manipulation" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>/usr/bin/make</buildCommand>
-<buildArguments>-C "/home/carloscosta/Projects/robot_object_manipulation" -j8</buildArguments>
-<buildTarget>robot_object_manipulation</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name="Clean" path="[Targets]/[exe] robot_object_manipulation" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>/usr/bin/cmake</buildCommand>
-<buildArguments>-E chdir "/home/carloscosta/Projects/robot_object_manipulation" "/usr/bin/cmake" -P "CMakeFiles/robot_object_manipulation.dir/cmake_clean.cmake"</buildArguments>
-<buildTarget></buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
@@ -506,24 +605,66 @@
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="[obj] src/main.cpp.o" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="[obj] src/ConsoleControl.cpp.o" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/make</buildCommand>
 <buildArguments>-j8</buildArguments>
-<buildTarget>src/main.cpp.o</buildTarget>
+<buildTarget>src/ConsoleControl.cpp.o</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="[pre] src/main.cpp.i" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="[pre] src/ConsoleControl.cpp.i" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/make</buildCommand>
 <buildArguments>-j8</buildArguments>
-<buildTarget>src/main.cpp.i</buildTarget>
+<buildTarget>src/ConsoleControl.cpp.i</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="[to asm] src/main.cpp.s" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="[to asm] src/ConsoleControl.cpp.s" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/make</buildCommand>
 <buildArguments>-j8</buildArguments>
-<buildTarget>src/main.cpp.s</buildTarget>
+<buildTarget>src/ConsoleControl.cpp.s</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[obj] src/HeadController.cpp.o" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>src/HeadController.cpp.o</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[pre] src/HeadController.cpp.i" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>src/HeadController.cpp.i</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[to asm] src/HeadController.cpp.s" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>src/HeadController.cpp.s</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[obj] src/ObjectManipulation.cpp.o" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>src/ObjectManipulation.cpp.o</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[pre] src/ObjectManipulation.cpp.i" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>src/ObjectManipulation.cpp.i</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[to asm] src/ObjectManipulation.cpp.s" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/make</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>src/ObjectManipulation.cpp.s</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>

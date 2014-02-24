@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>robot_object_manipulation-RelWithDebInfo@robot_object_manipulation</name>
+	<name>robot_object_manipulation-Debug@robot_object_manipulation</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -124,37 +124,77 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] robot_object_manipulation</name>
+			<name>[Targets]/[exe] console_control</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] robot_object_manipulation/</name>
+			<name>[Targets]/[exe] console_control/</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] robot_object_manipulation/Source Files</name>
+			<name>[Targets]/[exe] console_control/Source Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] robot_object_manipulation/Source Files/main.cpp</name>
+			<name>[Targets]/[exe] console_control/Source Files/ConsoleControl.cpp</name>
 			<type>1</type>
-			<location>/home/carloscosta/Projects/robot_object_manipulation/src/main.cpp</location>
+			<location>/home/carloscosta/Projects/robot_object_manipulation/src/ConsoleControl.cpp</location>
 		</link>
 		<link>
-			<name>[Targets]/[exe] robot_object_manipulation/Header Files</name>
+			<name>[Targets]/[exe] console_control/Header Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] robot_object_manipulation/CMake Rules</name>
+			<name>[Targets]/[exe] console_control/CMake Rules</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] robot_object_manipulation/Resources</name>
+			<name>[Targets]/[exe] console_control/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] object_manipulation</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] object_manipulation/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] object_manipulation/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] object_manipulation/Source Files/ObjectManipulation.cpp</name>
+			<type>1</type>
+			<location>/home/carloscosta/Projects/robot_object_manipulation/src/ObjectManipulation.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] object_manipulation/Source Files/HeadController.cpp</name>
+			<type>1</type>
+			<location>/home/carloscosta/Projects/robot_object_manipulation/src/HeadController.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] object_manipulation/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] object_manipulation/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] object_manipulation/Resources</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>

@@ -10,10 +10,22 @@
 	<url>https://github.com/carlosmccosta/Robot-Object-Manipulation</url>
 
 	<depend package="std_msgs" />
+	<depend package="geometry_msgs" />
+	<depend package="sensor_msgs" />
+	<depend package="topic_tools" />
+	<depend package="tf" />
+	<depend package="tf_conversions"/>
 	<depend package="roscpp" />
+	<depend package="rospy" />
 	<depend package="actionlib" />
+	<depend package="actionlib_msgs"/>
 	<depend package="object_manipulation_msgs" />
+	<depend package="object_manipulator"/>
 	<depend package="tabletop_object_detector" />
 	<depend package="tabletop_collision_map_processing" />
 	<depend package="pr2_controllers_msgs" />
+	<depend package="household_objects_database"/>
+	<depend package="pr2_gripper_reactive_approach"/>
+	<depend package="pr2_manipulation_controllers"/>
+	<depend package="pr2_tabletop_manipulation_launch"/>
 </package>
