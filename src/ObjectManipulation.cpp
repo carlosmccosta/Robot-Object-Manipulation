@@ -262,7 +262,7 @@ int main(int argc, char **argv) {
 
 	sleep(15);
 	HeadController headController;
-	headController.lookAt("base_link", 0.69, -0.16, 0.54);
+	headController.lookAt("base_link", 0.65, -0.12, 0.55);
 
 	ObjectManipulation objectManipulation;
 	objectManipulation.moveArmToSide(NAME_LEFT_ARM);

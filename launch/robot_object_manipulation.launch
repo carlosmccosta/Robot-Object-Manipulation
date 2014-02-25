@@ -1,13 +1,46 @@
 <launch>
-  <!-- start models -->
-  <include file="$(find manipulation_worlds)/launch/pr2_table_object.launch"/>
+	<arg name="gui" default="true" />
+	<param name="/use_sim_time" value="true" />
 
-  <!-- start manipulation stack -->
-  <include file="$(find pr2_tabletop_manipulation_launch)/launch/pr2_tabletop_manipulation.launch"/>
+	<!-- start models -->
+	<node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find robot_object_manipulation)/worlds/simulation.world" respawn="false" output="screen" />
 
-  <!-- object manipulation -->
-  <node pkg="robot_object_manipulation" type="object_manipulation" name="object_manipulation" output="screen">
-  		<param name="use_database" value="true" />
+	<!-- start gui -->
+	<group if="$(arg gui)">
+		<node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen" />
+	</group>
+
+	<include file="$(find pr2_gazebo)/launch/pr2.launch" />
+
+	<!-- spawn table and tabletop object -->
+	<!--
+	<param name="table_description" command="$(find xacro)/xacro.py '$(find manipulation_worlds)/urdf/table.urdf.xacro'" />
+	<node name="spawn_table" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -model table_1" respawn="false" output="screen" />
+	<node name="spawn_object" pkg="gazebo" type="spawn_model" args="-urdf -file $(find manipulation_worlds)/urdf/coke_can.urdf -model object_1 -wait 'table_1' -x 0.7 -z 0.55" respawn="false" output="screen" />
+ 	-->
+
+	<!-- parameters that give you reasonable physics as well as good speed -->
+	<!-- needed so that gripper joint stops on objects instead of oscillating forever -->
+	<node name="sor_pgs_iters" pkg="dynamic_reconfigure" type="dynparam" args="set gazebo sor_pgs_iters 50" />
+	<node name="sor_pgs_w" pkg="dynamic_reconfigure" type="dynparam" args="set gazebo sor_pgs_w 1.0" />
+	<node name="time_step" pkg="dynamic_reconfigure" type="dynparam" args="set gazebo time_step 0.001" />
+
+
+	<!-- start manipulation stack -->
+	<include file="$(find pr2_tabletop_manipulation_launch)/launch/pr2_tabletop_manipulation.launch" />
+
+	<!-- start local navigation stack -->
+	<include file="$(find pr2_2dnav_local)/pr2_2dnav.launch" />	
+
+	<!-- start rviz for local navigation -->
+	<node pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(find robot_object_manipulation)/rviz/local_navigation.rviz" />
+	<node pkg="costmap_2d" type="costmap_2d_markers" name="voxel_visualizer">
+		<remap from="voxel_grid" to="move_base_local_node/local_costmap/voxel_grid_throttled" />
+	</node>
+
+	<!-- object manipulation -->
+	<node pkg="robot_object_manipulation" type="object_manipulation" name="object_manipulation" output="screen">
+		<param name="use_database" value="true" />
 
 		<remap from="right_arm/constraint_aware_ik" to="/pr2_right_arm_kinematics/get_constraint_aware_ik" />
 		<remap from="left_arm/constraint_aware_ik" to="/pr2_left_arm_kinematics/get_constraint_aware_ik" />
@@ -20,10 +53,8 @@
 
 		<remap from="right_arm/move_arm" to="/move_right_arm" />
 		<remap from="left_arm/move_arm" to="/move_left_arm" />
-		<!-- <remap from="right_arm/reactive_grasp" to="/reactive_grasp/right" />
-		<remap from="left_arm/reactive_grasp" to="/reactive_grasp/left" />  -->		 
-		<remap from="reactive_grasp/right" to="right_arm/reactive_grasp" />
-		<remap from="reactive_grasp/left" to="left_arm/reactive_grasp" />
+		<remap from="right_arm/reactive_grasp" to="/reactive_grasp/right" />
+		<remap from="left_arm/reactive_grasp" to="/reactive_grasp/left" />
 
 		<remap from="right_arm/hand_posture_execution" to="/r_gripper_grasp_posture_controller" />
 		<remap from="left_arm/hand_posture_execution" to="/l_gripper_grasp_posture_controller" />
@@ -41,8 +72,8 @@
 		<param name="left_cartesian_controller" value="l_cart" />
 		<param name="right_joint_controller" value="r_arm_controller" />
 		<param name="left_joint_controller" value="l_arm_controller" />
-  </node>
-  
-  <!-- console control -->
-  <node pkg="robot_object_manipulation" type="console_control" name="console_control" output="screen"/>  
+	</node>
+
+	<!-- console control -->
+	<node pkg="robot_object_manipulation" type="console_control" name="console_control" output="screen" />
 </launch>
