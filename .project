@@ -144,6 +144,16 @@
 			<location>/home/carloscosta/Projects/robot_object_manipulation/src/ConsoleControl.cpp</location>
 		</link>
 		<link>
+			<name>[Targets]/[exe] console_control/Source Files/ObjectManipulation.cpp</name>
+			<type>1</type>
+			<location>/home/carloscosta/Projects/robot_object_manipulation/src/ObjectManipulation.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] console_control/Source Files/HeadController.cpp</name>
+			<type>1</type>
+			<location>/home/carloscosta/Projects/robot_object_manipulation/src/HeadController.cpp</location>
+		</link>
+		<link>
 			<name>[Targets]/[exe] console_control/Header Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
@@ -155,46 +165,6 @@
 		</link>
 		<link>
 			<name>[Targets]/[exe] console_control/Resources</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] object_manipulation</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] object_manipulation/</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] object_manipulation/Source Files</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] object_manipulation/Source Files/ObjectManipulation.cpp</name>
-			<type>1</type>
-			<location>/home/carloscosta/Projects/robot_object_manipulation/src/ObjectManipulation.cpp</location>
-		</link>
-		<link>
-			<name>[Targets]/[exe] object_manipulation/Source Files/HeadController.cpp</name>
-			<type>1</type>
-			<location>/home/carloscosta/Projects/robot_object_manipulation/src/HeadController.cpp</location>
-		</link>
-		<link>
-			<name>[Targets]/[exe] object_manipulation/Header Files</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] object_manipulation/CMake Rules</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>[Targets]/[exe] object_manipulation/Resources</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>

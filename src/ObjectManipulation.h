@@ -75,10 +75,9 @@ class ObjectManipulation {
 		bool waitForActionServers(shared_ptr<NodeHandle> node_handle, double max_seconds_wait_for_server = 30.0);
 		int detectObjectsOnTable();
 		int processCollisions();
-		bool pickupObject(string arm_name = "right_arm", float lift_z_distance = 0.1, double max_seconds_wait_for_conclusion = 120.0);
-		bool placeObject(string arm_name = "right_arm", double x_offset = -0.1, double y_offset = 0.1, double z_offset = -0.1, double max_seconds_wait_for_conclusion = 120.0);
+		bool pickupObject(string arm_name = "right_arm", float lift_z_distance = 0.1, double max_seconds_wait_for_conclusion = 90.0);
+		bool placeObject(string arm_name = "right_arm", double x_offset = -0.1, double y_offset = 0.1, double z_offset = -0.1, double max_seconds_wait_for_conclusion = 90.0);
 		bool moveArmToSide(string arm_name);
-		bool tuckArm(string arm_name);
 		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </ObjectManipulation-functions>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 	// =============================================   </public-section>   =============================================
 

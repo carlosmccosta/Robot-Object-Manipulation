@@ -142,6 +142,7 @@ bool ObjectManipulation::pickupObject(string arm_name, float lift_z_distance, do
 
 	ROS_INFO("Waiting for the pickup action...");
 	if (!pickup_client_.waitForResult(Duration(max_seconds_wait_for_conclusion))) {
+		pickup_result_ = *(pickup_client_.getResult());
 		ROS_ERROR("The pickup action reached the time limit");
 		return false;
 	}
@@ -149,7 +150,7 @@ bool ObjectManipulation::pickupObject(string arm_name, float lift_z_distance, do
 	pickup_result_ = *(pickup_client_.getResult());
 	if (pickup_client_.getState() != actionlib::SimpleClientGoalState::SUCCEEDED) {
 		ROS_ERROR("The pickup action has failed with result code %d", pickup_result_.manipulation_result.value);
-		mech_interface_.translateGripperCartesian(arm_name, direction_, ros::Duration(2.0), .015, .09, .02, .16, .1);
+//		mech_interface_.translateGripperCartesian(arm_name, direction_, ros::Duration(2.0), .015, .09, .02, .16, .1);
 		return false;
 	}
 
@@ -234,53 +235,15 @@ bool ObjectManipulation::moveArmToSide(string arm_name) {
 		if (!mech_interface_.attemptMoveArmToGoal(arm_name, side_position, empty_col, empty_pad)) {
 			ROS_ERROR("Failed to move arm to side\n");
 			return false;
-			ROS_INFO("Moved arm to side\n");
-		} else {
-			return false;
 		}
 	} catch (object_manipulator::MoveArmStuckException &ex) {
 		ROS_ERROR("Arm is stuck!\n");
 		return false;
 	}
 
+	ROS_INFO("Moved arm to side\n");
 	return true;
-}
-
-
-bool ObjectManipulation::tuckArm(string arm_name) {
-
-	return false;
 }
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </ObjectManipulation-functions>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 // =================================================  <public-section>   ===============================================
 
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <main>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-int main(int argc, char **argv) {
-	ros::init(argc, argv, "object_manipulation");
-	shared_ptr<ros::NodeHandle> node_handle(new ros::NodeHandle());
-
-	sleep(15);
-	HeadController headController;
-	headController.lookAt("base_link", 0.65, -0.12, 0.55);
-
-	ObjectManipulation objectManipulation;
-	objectManipulation.moveArmToSide(NAME_LEFT_ARM);
-	objectManipulation.moveArmToSide(NAME_RIGHT_ARM);
-	sleep(10);
-
-	if (objectManipulation.setupServices(node_handle) && objectManipulation.waitForActionServers(node_handle)) {
-		for (size_t i = 0; i < 3; ++i) {
-			if (objectManipulation.detectObjectsOnTable() > 0 && objectManipulation.processCollisions() > 0) {
-				if (objectManipulation.pickupObject()) {
-					if (objectManipulation.placeObject())
-						return 0;
-				}
-			}
-			sleep(10);
-		}
-	}
-
-	return -1;
-}
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </main>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

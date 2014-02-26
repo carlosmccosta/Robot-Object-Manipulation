@@ -21,7 +21,7 @@ int ConsoleControl::kfd = 0;
 termios ConsoleControl::cooked;
 termios ConsoleControl::raw;
 
-ConsoleControl::ConsoleControl(shared_ptr<ros::NodeHandle> node_handle) : node_handle_(node_handle) {
+ConsoleControl::ConsoleControl(shared_ptr<ros::NodeHandle> node_handle) : node_handle_(node_handle), object_manipulation_initialized_(false) {
 	setupConsole();
 	resetConfiguration();
 }
@@ -54,12 +54,58 @@ void ConsoleControl::resetConfiguration() {
 	n_private.param("yaw_run_rate", yaw_rate_run_, 1.5);
 }
 
+
+bool ConsoleControl::initObjectManipulation() {
+	ROS_INFO("Initializing object manipulation");
+	headController_.lookAt("base_link", 0.65, -0.12, 0.55);
+
+	resetArms();
+
+	if (objectManipulation_.setupServices(node_handle_) && objectManipulation_.waitForActionServers(node_handle_)) {
+		object_manipulation_initialized_ = true;
+		ROS_INFO("Initialization finished");
+	} else {
+		ROS_ERROR("Initialization failed");
+		object_manipulation_initialized_ = false;
+	}
+
+	return object_manipulation_initialized_;
+}
+
+
+bool ConsoleControl::resetArms() {
+	return (objectManipulation_.moveArmToSide(NAME_LEFT_ARM) && objectManipulation_.moveArmToSide(NAME_RIGHT_ARM));
+}
+
+
+bool ConsoleControl::liftObject() {
+	if (!object_manipulation_initialized_) {
+		if (!initObjectManipulation()) {
+			return false;
+		}
+	}
+
+	if (objectManipulation_.detectObjectsOnTable() > 0 && objectManipulation_.processCollisions() > 0 && objectManipulation_.pickupObject()) {
+		return true;
+	}
+
+	return false;
+}
+
+
+bool ConsoleControl::placeObject() {
+	if (object_manipulation_initialized_&& objectManipulation_.placeObject()) {
+		objectManipulation_.moveArmToSide(NAME_LEFT_ARM);
+		objectManipulation_.moveArmToSide(NAME_RIGHT_ARM);
+		return true;
+	}
+
+	return false;
+}
+
+
 void ConsoleControl::processInput() {
-	puts("Reading from keyboard");
-	puts("---------------------------");
-	puts("Use 'WASD' to translate");
-	puts("Use 'QE' to yaw");
-	puts("Press 'Shift' to run");
+	showHelp();
 
 	char c;
 	bool movementInput;
@@ -73,19 +119,23 @@ void ConsoleControl::processInput() {
 
 		movementInput = true;
 		switch (c) {
-			case 'w': 	cmd_.linear.x  =  walk_vel_; 		break;
-			case 's': 	cmd_.linear.x  = -walk_vel_; 		break;
-			case 'a': 	cmd_.linear.y  =  walk_vel_; 		break;
-			case 'd': 	cmd_.linear.y  = -walk_vel_; 		break;
-			case 'q': 	cmd_.angular.z =  yaw_rate_; 		break;
-			case 'e': 	cmd_.angular.z = -yaw_rate_; 		break;
-			case 'W':	cmd_.linear.x  =  run_vel_; 		break;
-			case 'S':	cmd_.linear.x  = -run_vel_; 		break;
-			case 'A':	cmd_.linear.y  =  run_vel_; 		break;
-			case 'D':	cmd_.linear.y  = -run_vel_; 		break;
-			case 'Q':	cmd_.angular.z =  yaw_rate_run_; 	break;
-			case 'E':	cmd_.angular.z = -yaw_rate_run_; 	break;
-			default : 	movementInput = false; 			break;
+			case 'w': 	cmd_.linear.x  =  walk_vel_; 			break;
+			case 's': 	cmd_.linear.x  = -walk_vel_; 			break;
+			case 'a': 	cmd_.linear.y  =  walk_vel_; 			break;
+			case 'd': 	cmd_.linear.y  = -walk_vel_; 			break;
+			case 'q': 	cmd_.angular.z =  yaw_rate_; 			break;
+			case 'e': 	cmd_.angular.z = -yaw_rate_; 			break;
+			case 'W':	cmd_.linear.x  =  run_vel_; 			break;
+			case 'S':	cmd_.linear.x  = -run_vel_; 			break;
+			case 'A':	cmd_.linear.y  =  run_vel_; 			break;
+			case 'D':	cmd_.linear.y  = -run_vel_; 			break;
+			case 'Q':	cmd_.angular.z =  yaw_rate_run_; 		break;
+			case 'E':	cmd_.angular.z = -yaw_rate_run_; 		break;
+			case 'l':	liftObject();	movementInput = false;  break;
+			case 'p':	placeObject();  movementInput = false;  break;
+			case 'r':	resetArms();  	movementInput = false;  break;
+			case 'h':	showHelp();  	movementInput = false;  break;
+			default : 	movementInput  = false; 				break;
 		}
 
 		if (movementInput) {
@@ -93,25 +143,22 @@ void ConsoleControl::processInput() {
 		}
 	}
 }
+
+
+void ConsoleControl::showHelp() {
+	puts("Reading from keyboard");
+	puts("---------------------------");
+	puts("Use 'wasd' to translate");
+	puts("Use 'qe' to yaw");
+	puts("Use 'l' to lift objects");
+	puts("Use 'p' to place objects");
+	puts("Use 'r' to reset arms");
+	puts("Press 'Shift' or 'CAPSLOCK' to run");
+	puts("Press 'h' to show help");
+}
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </ConsoleControl-functions>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <gets>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </gets>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <sets>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </sets>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 // =================================================  <public-section>   ===============================================
 
-// ===============================================   <protected-section>   =============================================
-
-// ===============================================   </protected-section>   ============================================
-
-// =================================================   <private-section>   =============================================
-
-// =================================================   <private-section>   =============================================
 
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <main>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

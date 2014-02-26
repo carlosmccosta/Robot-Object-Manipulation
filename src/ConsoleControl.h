@@ -26,6 +26,7 @@
 // Gazebo includes
 
 // project includes
+#include "ObjectManipulation.h"
 
 // namespace specific imports to avoid namespace pollution
 using boost::shared_ptr;
@@ -46,7 +47,12 @@ class ConsoleControl {
 		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <ConsoleControl-functions>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		void setupConsole();
 		void resetConfiguration();
+		bool initObjectManipulation();
+		bool resetArms();
+		bool liftObject();
+		bool placeObject();
 		void processInput();
+		void showHelp();
 		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </ConsoleControl-functions>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		
 		// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <static vars>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -63,11 +69,9 @@ class ConsoleControl {
 
 		  shared_ptr<ros::NodeHandle> node_handle_;
 		  ros::Publisher vel_pub_;
+		  bool object_manipulation_initialized_;
+		  HeadController headController_;
+		  ObjectManipulation objectManipulation_;
 	// ============================================   </protected-section>   ===========================================
-		
-	// ==============================================   <private-section>   ============================================
-	private:
-		
-	// ==============================================   </private-section>   ===========================================
 };
 
