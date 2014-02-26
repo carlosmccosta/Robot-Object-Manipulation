@@ -1,15 +1,10 @@
 #pragma once
 
-/**\file ConsoleControl.h
- * \brief Description...
- *
- * @version 1.0
- * @author carloscosta
- */
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <defines>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #define TOPIC_BASE_CONTROLLER "base_controller/command"
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </defines>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 // std includes
@@ -31,6 +26,8 @@
 // namespace specific imports to avoid namespace pollution
 using boost::shared_ptr;
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
 
 // ##################################################   ConsoleControl   ###############################################
 /**
@@ -74,4 +71,3 @@ class ConsoleControl {
 		  ObjectManipulation objectManipulation_;
 	// ============================================   </protected-section>   ===========================================
 };
-

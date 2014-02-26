@@ -1,14 +1,3 @@
-/**\file ConsoleControl.cpp
- * \brief Description...
- *
- * @version 1.0
- * @author carloscosta
- */
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <defines>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </defines>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #include "ConsoleControl.h"
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </includes>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -26,8 +15,8 @@ ConsoleControl::ConsoleControl(shared_ptr<ros::NodeHandle> node_handle) : node_h
 	resetConfiguration();
 }
 
-ConsoleControl::~ConsoleControl() {
-}
+
+ConsoleControl::~ConsoleControl() {}
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </constructors-destructor>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -41,6 +30,7 @@ void ConsoleControl::setupConsole() {
 	raw.c_cc[VEOF] = 2;
 	tcsetattr(kfd, TCSANOW, &raw);
 }
+
 
 void ConsoleControl::resetConfiguration() {
 	cmd_.linear.x = cmd_.linear.y = cmd_.angular.z = 0;
@@ -166,6 +156,7 @@ void quit(int sig) {
 	tcsetattr(ConsoleControl::kfd, TCSANOW, &ConsoleControl::cooked);
 	exit(0);
 }
+
 
 int main(int argc, char **argv) {
 	ros::init(argc, argv, "console_control");

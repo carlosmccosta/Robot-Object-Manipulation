@@ -1,13 +1,5 @@
 #pragma once
 
-/**\file HeadController.h
- * \brief Description...
- *
- * @version 1.0
- * @author carloscosta
- */
-
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <defines>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #define ACTION_POINT_HEAD "/head_traj_controller/point_head_action"
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   </defines>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

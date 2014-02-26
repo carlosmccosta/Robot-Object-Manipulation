@@ -1,14 +1,5 @@
 #pragma once
 
-/**\file ObjectManipulation.h
- * \brief Description...
- *
- * @version 1.0
- * @author carloscosta
- */
-
-
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   <defines>   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #define SERVICE_OBJECT_DETECTION "object_detection"
 #define SERVICE_COLLISION_PROCESSING "tabletop_collision_map_processing/tabletop_collision_map_processing"
@@ -98,4 +89,3 @@ class ObjectManipulation {
 		object_manipulation_msgs::PickupResult pickup_result_;
 	// ============================================   </protected-section>   ===========================================
 };
-
