@@ -45,7 +45,7 @@ Visualization Manager:
       Marker Topic: visualization_marker
       Name: Visualization Markers
       Namespaces:
-        {}
+        /move_base_local_node/local_costmap/voxel_grid_throttled: true
       Queue Size: 100
       Value: true
     - Alpha: 0.5
@@ -521,7 +521,7 @@ Visualization Manager:
       Decay Time: 2
       Enabled: true
       Max Color: 255; 255; 255
-      Max Intensity: 101
+      Max Intensity: 999999
       Min Color: 0; 0; 0
       Min Intensity: 101
       Name: Head Scan
@@ -549,7 +549,7 @@ Visualization Manager:
       Decay Time: 0
       Enabled: true
       Max Color: 255; 255; 255
-      Max Intensity: 101
+      Max Intensity: 999999
       Min Color: 0; 0; 0
       Min Intensity: 101
       Name: Floor Scan
@@ -819,7 +819,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 0; 0; 0
-    Fixed Frame: /base_link
+    Fixed Frame: /odom_combined
   Name: root
   Tools:
     - Class: rviz/MoveCamera
@@ -834,17 +834,17 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.6007
+      Distance: 8.17213
       Focal Point:
         X: 0
         Y: 0
         Z: 0
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.940398
+      Pitch: 0.830398
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.27358
+      Yaw: 1.51357
     Saved: ~
 Window Geometry:
   Camera:

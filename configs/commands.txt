@@ -1,6 +1,8 @@
 # project
 roslaunch robot_object_manipulation robot_object_manipulation.launch
 roslaunch robot_object_manipulation simulation_world.launch
+roslaunch robot_localization simulation_world.launch
+
 
 
 # start separate
@@ -24,7 +26,7 @@ roslaunch pr2_tabletop_manipulation_launch pr2_tabletop_manipulation.launch
 roslaunch pr2_pick_and_place_demos pick_and_place_keyboard_interface.launch
 
 
-#interactive manipulation
+# interactive manipulation
 sudo apt-get remove ros-groovy-geometric-shapes
 
 roslaunch pr2_gazebo pr2_table_object.launch
@@ -55,3 +57,15 @@ roslaunch pr2_gazebo pr2_empty_world.launch
 rosrun pr2_tuckarm tuck_arms.py -r t -l t
 roslaunch pr2_2dnav_slam pr2_2dnav.launch
 roslaunch pr2_navigation_slam rviz_move_base_slam.launch
+rosrun map_server map_saver -f ~/Projects/robot_localization/maps/map
+
+
+
+# rviz 1.9.32
+git clone https://github.com/ros-visualization/rviz/tree/1.9.32
+cd rviz_1.9.32
+mkdir build
+cd build
+cmake ..
+make
+source ~/Projects/rviz/build/devel/setup.bash
